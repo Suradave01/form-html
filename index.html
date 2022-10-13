@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link
+      href="//db.onlinewebfonts.com/c/558e1f7c26d9405ac41942266ebac11d?family=Browallia+New"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style type="text/css">
+      @font-face {
+        font-family: "Browallia New";
+        src: url("//db.onlinewebfonts.com/t/558e1f7c26d9405ac41942266ebac11d.eot");
+        src: url("//db.onlinewebfonts.com/t/558e1f7c26d9405ac41942266ebac11d.eot?#iefix")
+            format("embedded-opentype"),
+          url("//db.onlinewebfonts.com/t/558e1f7c26d9405ac41942266ebac11d.woff2")
+            format("woff2"),
+          url("//db.onlinewebfonts.com/t/558e1f7c26d9405ac41942266ebac11d.woff")
+            format("woff"),
+          url("//db.onlinewebfonts.com/t/558e1f7c26d9405ac41942266ebac11d.ttf")
+            format("truetype"),
+          url("//db.onlinewebfonts.com/t/558e1f7c26d9405ac41942266ebac11d.svg#Browallia New")
+            format("svg");
+      }
+      * {
+        margin: 0 auto;
+        padding: 0;
+        text-indent: 0;
+        max-width: 700px;
+      }
+      body {
+        font-family: Browallia New;
+      }
+      .border-dot {
+        display: inline-block;
+        border-bottom: 1px black dotted;
+      }
+    </style>
+  </head>
+  <body>
+    <table style="width: 100%">
+      <tr>
+        <td style="width: 40%">
+          <img
+            width="147"
+            height="57"
+            src="data:image/jpg;base64,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"
+          />
+        </td>
+        <td>
+          <h2>หนังสือขออนุมัติเบิกเงินกู้</h2>
+        </td>
+      </tr>
+    </table>
+    <blockquote style="font-size: 18px; width: 100%; text-align: right">
+      เลขที่&ensp;
+      <div class="border-dot" style="width: 20%"></div>
+    </blockquote>
+    <blockquote
+      style="width: 100%; font-size: 18px; text-align: right;"
+    >
+      วันที่&ensp;
+      <div class="border-dot" style="width: 20%"></div>
+    </blockquote>
+    <div id="title" style="font-variant: small-caps; font-size: 18px">
+      <p style="display: inline; padding-right: 8px">เรื่อง</p>
+      <p style="display: inline">ขออนุมัติเบิกเงินกู้</p>
+    </div>
+    <div
+      id="topic"
+      style="font-size: 18px;font-weight: lighter"
+    >
+      <p style="display: inline; padding-right: 6px">เรียน</p>
+      <p style="display: inline">
+        กรรมการผู้จัดการหรือผู้มีอำนาจ&ensp;บริษัท&ensp;ราชธานี&ensp;ลิสซิ่ง&ensp;จำกัด&ensp;(มหาชน)
+      </p>
+    </div>
+    <blockquote
+      style="
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      <p style="display: inline; padding-left: 36px">ตามที่ข้าพเจ้า</p>
+      <div class="border-dot" style="width: 368px"></div>
+      ได้รับอนุมัติวงเงินสินเชื่อธุรกิจเพื่อผู้จำหน่าย<br />
+    </blockquote>
+    <blockquote
+      style="
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      รถ/ทรัพย์สินจาก&ensp;บริษัท&ensp;ราชธานี&ensp;ลิสซิ่ง&ensp;จำกัด&ensp;(มหาชน)&ensp;("บริษัท")&ensp;รายละเอียดปรากฎตามสัญญาเงินกู้เลขที่
+      <div class="border-dot" style="width: 129px"></div>
+    </blockquote>
+    <blockquote
+      style="
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      ฉบับลงวันที่
+      <div class="border-dot" style="width: 169px"></div>
+      และบันทึกข้อตกลงแก้ไขเพิ่มเติมสัญญา&nbsp;หรือข้อตกลงอื่นใดซึ่งถือเป็นส่วนหนึ่งของสัญญาเงินกู้
+    </blockquote>
+    <blockquote
+      style="
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      ดังกล่าว
+    </blockquote>
+    <blockquote
+      style="
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      <p style="display: inline; padding-left: 36px">
+        ข้าพเจ้ามีความประสงค์ขอเบิกเงินกู้จำนวน&ensp;<div class="border-dot" style="width: 150px"></div>&ensp;บาท&ensp;( <div class="border-dot" style="width: 238px"></div> )
+      </p>
+    </blockquote>
+    <blockquote
+      style="
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      ในวันที่&ensp;<div class="border-dot" style="width: 166px"></div>&ensp;โดยข้าพเจ้าตกลงส่งมอบเอกสารชุดจดทะเบียนรถ/ทรัพย์สิน&ensp;ใบคู่มือจดทะเบียนหรือหนังสือแสดง
+    </blockquote>
+    <blockquote
+      style="
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      การจดทะเบียนรถ/ทรัพย์สิน&ensp;พร้อมเอกสารชุดโอนทะเบียนรถ/ทรัพย์สิน&ensp;<div class="border-dot" style="width:2px;border: white;"></div>(ชุดโอนลอย)&ensp;และเอกสารอื่นๆ&nbsp; ที่เกี่ยวข้องประกอบการจดทะเบียน
+    </blockquote>
+    <blockquote
+      style="
+        font-size: 18px;
+        font-weight: lighter;
+        width: 100%;
+      "
+    >
+      รถ/ทรัพย์สิน&ensp;เพื่อเป็นประกันหนี้เงินกู้ตามสัญญาดังกล่าว&ensp;รายละเอียดดังนี้
+    </blockquote>
+    <div id="detail" style="width: 100%;font-size: 18px;
+    font-weight: lighter;">
+      <div id="detail-title" style="width: 100%; text-align: center; border: 1px solid black; padding-bottom: 3px;">
+        <p>รายละเอียดรถ/ทรัพย์สิน</p>
+      </div>
+      <div id="detail-infomation" style="width: 100%;border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;display: flex;padding-top: 20px;">
+        <div class="info-left" style="width: 41%;">
+            <blockquote>
+                <p style="display: inline; width: 50%;">
+                    ยี่ห้อ&ensp;<div class="border-dot" style="width: 255px"></div>
+                </p>
+            </blockquote>
+            <blockquote style="padding-top:5px">
+                <p style="display: inline;">
+                    รุ่นปี&ensp;<div class="border-dot" style="width: 90px"></div>&ensp;เลขไมล์&ensp;<div class="border-dot" style="width: 109px"></div>
+                </p>    
+            </blockquote>
+            <blockquote style="padding-top:5px">
+            <p style="display: inline;">
+                เลขตัวรถ&ensp;<div class="border-dot" style="width: 231px"></div>
+            </p>
+            </blockquote>
+            <blockquote style="padding-top:5px;padding-bottom: 5px;">
+            </p>
+            <p style="display: inline;">
+                เลขทะเบียน&ensp;<div class="border-dot" style="width: 217px"></div>
+            </p>
+            </blockquote>
+        </div>
+        <div class="info-right"style="width:50%">
+            <blockquote>
+                <p style="display: inline; width: 50%;">
+                    รุ่น&ensp;<div class="border-dot" style="width: 327px"></div>
+                </p>
+            </blockquote>
+            <blockquote style="padding-top:5px">
+                <p style="display: inline;">
+                    สี&ensp;&ensp;<div class="border-dot" style="width: 324px"></div>
+                </p>    
+            </blockquote>
+            <blockquote style="padding-top:5px">
+            <p style="display: inline;">
+                เลขเครื่อง/ทรัพย์สิน&ensp;<div class="border-dot" style="width: 243px"></div>
+            </p>
+            </blockquote>
+            <blockquote style="padding-top:5px;padding-bottom: 5px;">
+            </p>
+            <p style="display: inline;">
+                ราคาซื้อขาย&ensp;<div class="border-dot" style="width: 279px"></div>
+            </p>
+            </blockquote>
+        </div>
+    </div>  
+    <blockquote
+    style="
+     margin-top: 10px;
+      font-size: 18px;
+      font-weight: lighter;
+      width: 100%;
+    "
+  >
+  <p style="display: inline; padding-left: 36px">
+    ในการนี้&ensp;ข้าพเจ้าได้สั่งจ่ายเช็คธนาคาร&ensp;<div class="border-dot" style="width: 236px"></div>&ensp;เลขที่&ensp;<div class="border-dot" style="width: 180px"></div>
+  </p>
+  </blockquote>
+  <blockquote
+  style="
+    font-size: 18px;
+    font-weight: lighter;
+    width: 100%;
+  "
+>
+  ฉบับลงวันที่&ensp;<div class="border-dot" style="width: 120px"></div>&ensp;สั่งจ่ายเงินจำนวน&ensp;<div class="border-dot" style="width: 161px"></div>&ensp;บาท&ensp;เพื่เลขทะเบียนชำระหนี้เงินต้นคืนให้แก่บริษัทในวันที่
+</blockquote>
+<blockquote
+style="
+  font-size: 18px;
+  font-weight: lighter;
+  width: 100%;
+"
+>
+ทำหนังสือขอเบิกเงินกู้ฉบับนี้
+</blockquote>
+<blockquote
+style="
+ margin-top: 10px;
+  font-size: 18px;
+  font-weight: lighter;
+  width: 100%;
+"
+>
+<p style="display: inline; padding-left: 36px">
+    จึงเรียนมาเพื่อโปรดพิจารณา
+</p>
+</blockquote>
+<blockquote
+style="
+ margin-top: 25px;
+  font-size: 18px;
+  font-weight: lighter;
+  width: 100%;
+  text-align: center;
+"
+>
+<p style="display: inline;">
+    ลงชื่อ&ensp;<div class="border-dot" style="width: 260px"></div>&ensp;ผู้กู้
+</p>
+</blockquote>
+<blockquote
+style="
+  font-size: 18px;
+  font-weight: lighter;
+  width: 100%;
+  text-align: center;
+"
+>
+<p style="display: inline; padding-left: 9px;">
+    (&ensp;<div class="border-dot" style="width: 240px;border: white;"></div>&ensp;)
+</p>
+</blockquote>
+<blockquote style="padding-top: 15px">
+  <h4><u>สำหรับบริษัท</u></h4>
+</blockquote>
+<div class="company" style="width: 100%;font-size: 18px;
+font-weight: lighter;border: 1px solid black;margin-top: 3px;">
+  <div class="company-detail" style=" display: flex;font-size: 18px;">
+    <div class="company-left" style="width:50%;font-size: 18px;">
+      <div class="left-top" style="width:95%">
+        <blockquote>
+          <h4>ส่วนตรวจสอบรถ/ทรัพย์สิน</h4>
+        </blockquote>
+        <blockquote style="padding-top: 5px">
+          <h4 style="display: inline;">สภาพรถ</h4>
+          <input type="checkbox" style="display: inline;"> ดีมาก
+          <input type="checkbox" style="display: inline;"> ดี
+          <input type="checkbox" style="display: inline;"> พอใช้
+          <input type="checkbox" style="display: inline;"> ไม่ดี <div class="border-dot" style="width: 111px;"></div>
+        </blockquote>
+        <blockquote style="padding-top: 5px">
+          <input type="checkbox" style="display: inline;"> พร้อมจำหน่าย
+          <input type="checkbox" style="display: inline;"> ตกแต่ง/ซ่อมบำรุง <div class="border-dot" style="width: 127px;"></div>
+        </blockquote>
+        <blockquote style="padding-top: 5px">
+          <div class="border-dot" style="width: 100%"></div>
+        </blockquote>
+        <blockquote style="padding-top: 25px;padding-bottom: 13px;">
+          ลงชื่อ <div class="border-dot" style="width: 145px"></div> เจ้าหน้าที่การตลาด
+        </blockquote>
+      </div>
+      <div class="left-bottom" style="border-top: 1px solid black; width: 100%;">
+        <div class="bottom-detail" style="width: 95%">
+          <blockquote>
+            <h4>ส่วนตรวจสอบรถ/ทรัพย์สิน</h4>
+          </blockquote>
+          <blockquote style="padding-top: 20px;">
+            ราคาประเมิน <div class="border-dot" style="width: 235px"></div> บาท
+          </blockquote>
+          <blockquote style="padding-top: 15px;padding-bottom: 13px;">
+            ลงชื่อ <div class="border-dot" style="width: 163px"></div> ผู้อำนวยการ/ผู้จัดการสินเชื่อ
+          </blockquote>
+        </div>
+      
+      </div>
+    </div>
+    <div class="company-right"style="width:50%;border-left:1px solid black"">
+      <div class="right-detail" style="width: 95%">
+        <blockquote style="padding-top:10px;">
+          <h4>ส่วนตรวจสอบรถ/ทรัพย์สิน</h4>
+        </blockquote>
+        <blockquote style="padding-top:25px;">
+          ความเห็น <div class="border-dot" style="width: 279px"></div>
+        </blockquote>
+        <blockquote style="padding-top:14px;">
+          <div class="border-dot" style="width: 100%"></div>
+        </blockquote>
+        <blockquote style="padding-top:14px;">
+          <div class="border-dot" style="width: 100%"></div>
+        </blockquote>
+        <blockquote style="padding-top:53px;">
+          ลงชื่อ <div class="border-dot" style="width: 216px"></div> ผู้มีอำนาจอนุมัติ
+        </blockquote>
+      </div>
+  
+    </div>
+  </div>
+</div>
+</body>
+</html>
